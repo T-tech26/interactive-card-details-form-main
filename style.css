@@ -1,0 +1,596 @@
+
+*, ::after, ::before { /* Reseting all default css paddings and margins for all elements */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1440px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  border: 1px solid hsl(279, 6%, 55%);
+  margin: auto;
+}
+
+.card-container {
+  background: url('./images/bg-main-desktop.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: visible
+}
+
+.card-front {
+  background: url('./images/bg-card-front.png');
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-size: 100% 100%;
+  width: 360px;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 30px;
+  margin-left: 50%;
+  z-index: 1;
+}
+
+.card-logo {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.card-number h2 {
+  color: hsl(0, 0%, 100%);
+  letter-spacing: 5px;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.name-and-date {
+  width: 100%;
+  height: auto;
+  padding: 20px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name-and-date p {
+  color: hsl(270, 3%, 87%);
+  font-size: .9rem;
+  letter-spacing: 1px;
+}
+
+.card-back {
+  background: url('./images/bg-card-back.png');
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-size: 100% 100%;
+  width: 360px;
+  height: 210px;
+  z-index: 1;
+  margin-left: 90%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card-back p {
+  color: hsl(0, 0%, 100%);
+  letter-spacing: 2px;
+  padding-right: 4px;
+  font-size: .8rem;
+}
+
+.card-form {
+  background: hsl(0, 0%, 100%);
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  position: relative;
+}
+
+form {
+  width: 40%;
+  height: auto;
+}
+
+label {
+  color: hsl(278, 68%, 11%);
+  font-size: .6rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+input[name="card-holder"], input[name="number"], input[name="month"], input[name="year"], input[name="cvc"] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid hsl(270, 3%, 87%);
+  padding: 10px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  outline: none;
+}
+
+/* This is for removing any default number controllers, basically the tiny up and down arrows */
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+  appearance: none;
+}
+
+/* similar thing but for mozila browsers */
+input[type="number"] {
+  appearance: none;
+}
+
+/* This are the input parent element used to indicate the focus state and the active states, as well used in the javascript for input field validating
+This logic for using a container for the input focus state is because of the linear gradient border color, and it limits the use of a border raduis, if border radius where not needed it would not have been probably used
+So the borders are been applied by giving th container a 1px padding then apply a background color so to that the background color will acts as the border for the input fields through its padding space
+*/
+.input1, .input2, .input5 {
+  width: 100%;
+  height: auto;
+  padding: 1px;
+  margin: 5px 0px 10px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+.input3, .input4 {
+  width: 100%;
+  height: auto;
+  padding: 1px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+::placeholder {
+  color: hsl(279, 6%, 80%);
+  letter-spacing: 2px;
+}
+
+.date {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.date-container {
+  width: 50%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.date-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-input > div {
+  width: 48%;
+  height: auto;
+  margin: 5px 0px 10px;
+}
+
+input[name="month"], input[name="year"], input[name="cvc"] {
+ height: 35px;
+}
+
+.button {
+  width: 100%;
+  height: auto;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 45px;
+  color: hsl(270, 3%, 87%);
+  border: none;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  background: hsl(278, 68%, 11%);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 20px;
+}
+
+.complete-state {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.complete-state h1 {
+  color: hsl(278, 68%, 11%);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin: 20px 0px;
+}
+
+.complete-state p {
+  color: hsl(279, 6%, 55%);
+  font-size: .9rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  background: hsl(278, 68%, 11%);
+  color: hsl(270, 3%, 87%);
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.name-error, .number-error, .month-error, .year-error, .cvc-error {
+  font-size: .6rem;
+  color: hsl(0, 100%, 66%);
+  letter-spacing: 1px;
+}
+
+@media (min-width: 981px) and (max-width: 1024px) {
+  .card-front {
+    width: 310px;
+    padding: 20px;
+    margin-left: 80%;
+  }
+
+  .card-number h2 {
+    letter-spacing: 3px;
+    font-size: 1.3rem;
+  }
+
+  .card-back {
+    width: 310px;
+    height: 190px;
+    margin-left: 120%;
+    padding: 40px;
+  }
+
+  form {
+    width: 45%;
+  }
+  
+  button {
+    width: 100%;
+    height: 45px;
+    border: none;
+    background: hsl(278, 68%, 11%);
+    color: hsl(270, 3%, 87%);
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    font-size: .9rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 980px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .card-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .card-front {
+    width: 360px;
+    height: auto;
+    padding: 20px;
+    margin: 215px 0 0;
+    z-index: 1;
+  }
+
+  .card-back {
+    width: 360px;
+    height: 180px;
+    z-index: 0;
+    margin-left: 0;
+    padding: 40px;
+    position: absolute;
+    top: 40px;
+    left: 38%;
+  }
+
+  form {
+    width: 60%;
+    height: auto;
+  }
+
+  .complete-state {
+    width: 60%;
+  }
+  
+  .complete-state h1 {
+    font-size: 1.3rem;
+  }
+  
+  button {
+    width: 80%;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .card-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .card-front {
+    width: 300px;
+    height: auto;
+    padding: 15px;
+    margin: 215px 0 0;
+    z-index: 1;
+  }
+
+  .card-number h2 {
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+  }
+
+  .name-date p {
+    font-size: .7rem;
+  }
+
+  .card-back {
+    width: 300px;
+    height: 150px;
+    z-index: 0;
+    margin-left: 0;
+    padding: 40px;
+    position: absolute;
+    top: 65px;
+    left: 150px;
+  }
+
+  .card-back p {
+    font-size: .7rem;
+  }
+
+  form {
+    width: 80%;
+    height: auto;
+  }
+
+  input[name="card-holder"], input[name="number"], input[name="month"], input[name="year"], input[name="cvc"] {
+    height:35px;
+  }
+
+  input[name="month"], input[name="year"], input[name="cvc"] {
+    height: 30px;
+   }
+
+   label {
+    font-size: .5rem;
+    letter-spacing: 1px;
+  }
+
+  ::placeholder {
+    letter-spacing: 1px;
+    font-size: .7rem;
+  }
+
+  .complete-state {
+    width: 70%;
+  }
+  
+  .complete-state h1 {
+    font-size: 1.2rem;
+  }
+
+  .complete-state p {
+    font-size: .8rem;
+  }
+  
+  button {
+    width: 80%;
+    height: 40px;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 499px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .card-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .card-front {
+    width: 250px;
+    height: 1000px;
+    padding: 23px 15px;
+    margin: 200px 0 0;
+    z-index: 1;
+  }
+
+  .card-logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .card-number h2 {
+    letter-spacing: 2px;
+    font-size: 1rem;
+  }
+
+  .name-date p {
+    font-size: .6rem;
+  }
+
+  .card-back {
+    width: 250px;
+    height: 150px;
+    z-index: 0;
+    margin-left: 0;
+    padding: 40px;
+    position: absolute;
+    top: 60px;
+    right: 10%;
+  }
+
+  .card-back p {
+    font-size: .7rem;
+  }
+
+  .card-form {
+    width: 100%;
+  }
+
+  form {
+    width: 80%;
+    height: auto;
+  }
+
+  input[name="card-holder"], input[name="number"], input[name="month"], input[name="year"], input[name="cvc"] {
+    height:35px;
+  }
+
+  input[name="month"], input[name="year"], input[name="cvc"] {
+    height: 30px;
+   }
+
+   label {
+    font-size: .5rem;
+    letter-spacing: 1px;
+  }
+
+  ::placeholder {
+    letter-spacing: 1px;
+    font-size: .7rem;
+  }
+
+  .date {
+    flex-direction: column;
+  }
+
+  .date-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .date-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .complete-state {
+    width: 80%;
+  }
+  
+  .complete-state h1 {
+    font-size: 1.2rem;
+  }
+
+  .complete-state p {
+    font-size: .8rem;
+    text-align: center;
+  }
+  
+  button {
+    width: 80%;
+    height: 40px;
+    font-size: .8rem;
+  }
+}
