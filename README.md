@@ -72,8 +72,6 @@ It's just a function to add space to my credit card number, validate the format 
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
 I will really want to be focusing on 
 - DOM manipulations to be able to get full control over the DOM
 - Server side scripting with node js and express
@@ -90,3 +88,4 @@ I will really want to be focusing on
 
 - Frontend Mentor - [@T-tech26](https://www.frontendmentor.io/profile/T-tech26)
 - LinkedIn - [@tariladei-doutua](https://www.linkedin.com/in/tariladei-doutua-109059226)
+- Twitter - [@TariDoutua](https://twitter.com/TariDoutua/status/1630022392075395072)
