@@ -87,5 +87,5 @@ I will really want to be focusing on
 ## Author
 
 - Frontend Mentor - [@T-tech26](https://www.frontendmentor.io/profile/T-tech26)
-- LinkedIn - [@tariladei-doutua](https://www.linkedin.com/in/tariladei-doutua-109059226)
+- LinkedIn - [@tariladei-doutua](https://www.linkedin.com/posts/tariladei-doutua-109059226_frontend-mentor-interactive-card-details-activity-7035781894243819520-Gv7p?utm_source=share&utm_medium=member_desktop)
 - Twitter - [@TariDoutua](https://twitter.com/TariDoutua/status/1630022392075395072)
